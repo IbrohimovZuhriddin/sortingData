@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class ApplicationTests {
 
 	@Test
-	public void testsortDataNumerically() throws IOException {
+	public void testSortDataNumerically() throws IOException {
 		CsvService csvServic = new CsvService();
 
 		BufferedReader reader = new BufferedReader
