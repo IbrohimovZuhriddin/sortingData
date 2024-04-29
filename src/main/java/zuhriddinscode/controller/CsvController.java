@@ -1,8 +1,10 @@
-package zuhriddinscode;
+package zuhriddinscode.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import zuhriddinscode.domain.model.CsvData;
+import zuhriddinscode.service.CsvService;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -16,9 +18,9 @@ public class CsvController {
     private CsvService csvService;
 
     @PostMapping("/upload")
-    public List<CsvData> uploadAndSortCsv
-            ( @RequestParam("file") MultipartFile file,
-            @RequestParam(required = false, defaultValue = "numeric") String sortType ) throws Exception {
+    public List<CsvData> uploadAndSortCsv ( @RequestParam("file") MultipartFile file,
+            @RequestParam(required = false, defaultValue = "numeric") String sortType )
+            throws Exception {
 
         BufferedReader reader =
                 new BufferedReader
@@ -32,7 +34,4 @@ public class CsvController {
             return csvService.sortDataAlphabetically(data);
         }
     }
-
-
-
 }

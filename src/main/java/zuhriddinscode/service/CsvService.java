@@ -1,7 +1,8 @@
-package zuhriddinscode;
+package zuhriddinscode.service;
 
 import com.opencsv.bean.CsvToBeanBuilder;
 import org.springframework.stereotype.Service;
+import zuhriddinscode.domain.model.CsvData;
 
 import java.io.BufferedReader;
 import java.util.Comparator;
